@@ -1,0 +1,35 @@
+<app-header></app-header>
+<button routerLink="">Back</button>
+<div class="container">
+  <div class="box-user">
+    <div class="title">
+      <h4>Information</h4>
+    </div>
+    <h4 class="user-name">Jacob</h4>
+    <div class="user-picture">
+      <img src="https://i.pinimg.com/564x/9f/97/be/9f97beb8d08b2104d4dd6ef7abbe69e7.jpg" width="100px">
+    </div>
+  </div>
+
+  <div class="box-image" *ngIf="getimg && getimg.length > 0; else noImageBlock">
+    <div class="row" *ngFor="let img of getimg">
+      <img class="image-item" [src]="img.url" alt="" loading="lazy">
+      <div class="btn">
+        <button class="btn-delete">Delete</button>
+        <button class="btn-change">Change</button>
+      </div> 
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 50 50" (click)="addImage()">
+      <path d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z M37,26H26v11h-2V26H13v-2h11V13h2v11h11V26z"></path>
+    </svg>
+  </div>
+
+  <ng-template #noImageBlock>
+    <div class="btn-addimg" (click)="addImage()">
+     
+    </div>
+  </ng-template>
+  <div *ngIf="showAddButton" class="btn-addimg" (click)="addImage()">
+
+  </div>
+</div>

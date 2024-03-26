@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<div class="title">
+  <h1>Graph for the past 7 days</h1>
+</div>
+
+<div class="container">
+  <div *ngIf="isLoading" class="loading">Loading...</div>
+  <div *ngIf="!isLoading && getimg && getimg.length > 0" class="chart-container">
+    <div *ngFor="let img of getimg" class="chart-box">
+        <div class="image-cat">
+          <h2>{{ img.description}}</h2>
+          <img class="image-item" src="{{img.url}}" alt="" loading="lazy"> 
+        </div>  
+
+        <div class="chart-name">
+          <div class="chart-canvas">
+            <canvas [id]="'myChart' + img.picture_id" #charstCanvas></canvas>
+          </div>  
+        </div>
+    </div>
+  </div>
+</div>

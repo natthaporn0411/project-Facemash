@@ -1,0 +1,61 @@
+<app-header></app-header>
+<button routerLink="">Back</button>
+
+<div class="container">
+    <div class="title">
+        <div class="name-1">
+            <h3>Rating</h3>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="user-info">
+            <div class="title-user">
+                <h4>Rating Today</h4>
+            </div>
+            <div *ngFor="let data of ratingToday; let i = index">
+                <div class="user">
+                    <img [src]="data.url" alt="">
+                    <!-- <h6>ลำดับที่ {{i + 1}}</h6> -->
+                    <h6>{{ data.point }}</h6>
+                    <i class='bx bxs-heart'></i>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<!-- <div *ngIf="ratingYesterday.length > 0">
+    <div class="container">
+        <div class="title">
+            <div class="name-1">
+                <h3>Rating Yesterday</h3>
+            </div>
+        </div>
+  
+        <div class="wrapper">
+            <div class="user-info">
+                <div class="title-user">
+                    <h4>Rating</h4>
+                </div>
+                <div *ngFor="let data of ratingYesterday; let i = index">
+                    <div class="user">
+                        <img [src]="data.url" alt="">
+                        <h6>{{ data.point }}</h6>
+                        <p>ลำดับที่ {{i + 1}}</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="ratingToday.length > 0 && ratingYesterday.length > 0">
+    <div class="wrapper">
+        <div class="user-info">
+            <div class="title-user">
+                <h4>Differences Between Today and Yesterday</h4>
+            </div>
+            <p>{{ ratingToday.length - ratingYesterday.length }}</p>
+        </div>
+    </div>
+</div> -->

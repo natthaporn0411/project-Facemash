@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="wrapper">
+        <form action="">
+            <h1>Sing in</h1>
+            <div class="input-box">
+                <p>Email mobile phone number</p>         
+                <input type="text" #usernameInput >
+            </div>
+
+            <div class="input-box">
+                <p>Your password</p>
+                <input type="password" #passwordInput >
+            </div>
+            <button type="submit" class="btn" (click)="loginuser(usernameInput.value, passwordInput.value,$event)">Login</button>
+        </form>  
+    </div>
+
+    <div class="btn-create"><button routerLink="/createaccount" type="submit">Create an account</button>
+        
+    </div>
+
+</div>

@@ -1,0 +1,25 @@
+<app-header></app-header>
+<button routerLink="">Back</button>
+<div class="container">
+    <div class="title">
+        <div class="name-1">
+            <h3>Top 10</h3>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="img-cat">
+            <!-- loop show cat Top 10 -->
+            <div *ngFor="let item of topTenList; let i = index" class="show-cat">
+                <div class="rank">
+                    <h4>{{ i + 1 }}</h4> <!-- แสดงลำดับ -->
+                </div>
+                <img  [src]="item.url">
+                <div class="like">
+                    <h5>{{ item.point }}</h5>
+                    <i class='bx bxs-heart'></i>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
